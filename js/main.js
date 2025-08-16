@@ -2,6 +2,40 @@ const form = document.getElementById("novoItem")
 const lista = document.getElementById("lista")
 const itens = JSON.parse(localStorage.getItem("itens")) || []
 
+const btnFoto = document.getElementById("btnFoto");
+const uploadFoto = document.getElementById("uploadFoto");
+const fotoUsuario = document.getElementById("fotoUsuario");
+
+// Carregar imagem do localStorage ao abrir
+const fotoSalva = localStorage.getItem("fotoPerfil");
+if (fotoSalva) {
+    fotoUsuario.style.backgroundImage = `url(${fotoSalva})`;
+    fotoUsuario.style.backgroundSize = "cover";
+    fotoUsuario.style.backgroundPosition = "center";
+}
+
+// Abrir seletor de arquivos ao clicar no botão
+btnFoto.addEventListener("click", () => {
+    uploadFoto.click();
+});
+// Ao selecionar arquivo, exibir e salvar
+uploadFoto.addEventListener("change", () => {
+    const file = uploadFoto.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const imgData = e.target.result;
+            fotoUsuario.style.backgroundImage = `url(${imgData})`;
+            fotoUsuario.style.backgroundSize = "cover";
+            fotoUsuario.style.backgroundPosition = "center";
+            localStorage.setItem("fotoPerfil", imgData);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
+
 itens.forEach( (elemento) => {
     criaElemento(elemento)
 } )
@@ -76,3 +110,5 @@ function deletaElemento(tag, id){
 //escrever no localStorage
     localStorage.setItem("itens", JSON.stringify(itens))
 }
+
+
