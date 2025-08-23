@@ -6,6 +6,7 @@ const btnFoto = document.getElementById("btnFoto");
 const uploadFoto = document.getElementById("uploadFoto");
 const fotoUsuario = document.getElementById("fotoUsuario");
 
+
 // Carregar imagem do localStorage ao abrir
 const fotoSalva = localStorage.getItem("fotoPerfil");
 if (fotoSalva) {
@@ -35,7 +36,7 @@ uploadFoto.addEventListener("change", () => {
 });
 
 
-
+// criando itens
 itens.forEach( (elemento) => {
     criaElemento(elemento)
 } )
@@ -60,7 +61,7 @@ form.addEventListener("submit", (evento) => {
 
         itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual                //substituindo o valor antigo pelo atual
     } else{
-        itemAtual.id = itens[itens.lenght -1] ? (itens[itens.lenght-1]).id + 1 : 0;
+        itemAtual.id = itens[itens.length -1] ? (itens[itens.length-1]).id + 1 : 0;
         criaElemento(itemAtual)  
         itens.push(itemAtual)
     }
@@ -91,7 +92,7 @@ function criaElemento(item) {
 function atualizaElemento(item){
     document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade          //atualizando a quantidade
 }
-
+// criando um botão de delet
 function botaoDeleta(id){
     const elementoBotao = document.createElement("button")
     elementoBotao.innerText = "X"
@@ -110,5 +111,7 @@ function deletaElemento(tag, id){
 //escrever no localStorage
     localStorage.setItem("itens", JSON.stringify(itens))
 }
+
+
 
 

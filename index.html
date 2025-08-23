@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title> Controle Fitness</title>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<main class="conteudo">		
-			<div class = "principal"> 
-			<div class="exercicio" id="fotoUsuario">
-    				<input type="file" id="uploadFoto" accept="image/*" style="display:none">
-   					<button id="btnFoto">Enviar Foto</button>
-			</div>	
-				<form action="" class="adicionar" id="novoItem">
-					<label for="nome">Nome do exercício</label>
-					<input type="text" name="nome" id="nome">
-					
-					<label for="quantidade">Quantidade em kg.</label>
-					<input type="number" name="quantidade" id="quantidade">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Controle Fitness</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="app-titulo">
+            <h1>Controle Fitness</h1>
+			<hr>
+			<label for="dia">Selecione a quantidade de dias de treino:</label>
+			<select id="dia">
+				<option value="1">1 Dia </option>
+                <option value="2">2 Dias </option>
+                <option value="3">3 Dias </option>
+                <option value="4">4 Dias </option>
+                <option value="5">5 Dias </option>
+                <option value="6">6 Dias </option>
+                <option value="7">7 Dias </option>
+			</select>
+			<button id="btnAdicionar">OK</button>
+		</div>
+        <main class="conteudo">
+            <div class="principal"> 
+                <div class="exercicio" id="fotoUsuario">
+                    <input type="file" id="uploadFoto" accept="image/*" style="display:none">
+                    <button id="btnFoto">Enviar Foto</button>
+                </div>	
+                <form action="" class="adicionar" id="novoItem">
+                    <label for="nome">Nome do exercício</label>
+                    <input type="text" name="nome" id="nome">
+                    
+                    <label for="quantidade">Quantidade em kg.</label>
+                    <input type="number" name="quantidade" id="quantidade" step="any">
 
-					<input type="submit" value="Adicionar" class="cadastrar" id="cadastrar"> 
-				</form>	
-				
-				<ul class="lista" id="lista"></ul>
-			</div>
-		</main>
-		<script src="js/main.js"> </script>
-	</body>	
-<html>
+                    <input type="submit" value="Adicionar" class="cadastrar" id="cadastrar"> 
+                </form>	
+                
+                <ul class="lista" id="lista"></ul>
+            </div>
+
+        </main>
+        <script src="js/main.js"></script>
+    </body>	
+</html>

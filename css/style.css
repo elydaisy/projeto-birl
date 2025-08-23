@@ -1,24 +1,52 @@
 html {
 	background: radial-gradient(farthest-corner at right top,#bcb4e2, #f7bed0);
 	height: 100%;
+    padding: 2em;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.app-titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+body {
+    padding: 2em;
+}
+
+.app-titulo h1 {
+    font-size: 4em;
+    color: #703053;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px #f7bed0;
+    margin: 0;
+}
 .conteudo {
-	padding: 10vh 3em 0;
+	padding: 10vh 1em 0;
 	display: flex;
-	align-items: flex-start;
+    justify-content: center;
+    align-items: flex-start;
 	gap: 2em;
 }
 .principal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
     flex-grow: 1;
 	flex-basis: auto;
 	min-width: 300px;
-	padding: 20em 2em 2em;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0 auto;
+	padding: 5vh 2em 2em;
 	box-sizing: border-box;
-	display: flex;
 	background: #703053;
 	border-radius: 10px;
 	gap: 2em;
+    overflow: auto;
+    
 }
 
 .principal h1 {
@@ -44,14 +72,18 @@ html {
 }
 .adicionar {
     width: 50%;
+    flex: 1 1 300px;    
+    max-width: 350px;
 }
 .adicionar input {
     width: 100%;
+    min-width: 0;
     box-sizing: border-box;
     margin: 0.5em 0 1em;
     padding: 1em 0.5em;
     border-radius: 10px;
     border: 2px solid #3d1e3c;
+    font-size: 1em;
 }
 .adicionar label {
     display: block;
@@ -60,10 +92,15 @@ html {
     background-color: #3d1e3c;
     color: #FFFFFF;
     cursor: pointer;
+    font-size: 1em;
+    padding: 0.5em 1em;
 }
 .lista {
     margin: 0;
     padding: 0;
+    flex: 2 1 400px;          /* Lista ocupa mais espaço */
+    max-width: 500px;
+    min-width: 200px;
 }
 .item {
     list-style: none;
@@ -73,7 +110,9 @@ html {
     margin: 0 0 1em;
     width: 100%;
     box-sizing: border-box;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
     align-items: center;
     gap: 1em;
     font-size: 20px;
@@ -83,14 +122,14 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    Background: #b16e93;
+    background: #b16e93;
     font-weight: 400;
+    padding: 0.5em 1em; /* Ajusta o tamanho conforme o conteúdo */
+    min-width: 40px;    /* Opcional: garante tamanho mínimo */
 }
 .exercicio {
-    width: 300px;
-    height: 300px;
+    flex: 0 0 200px;
+    max-width: 200px;
     border-radius: 10px;
     background-color: #ccc;
     display: flex;
@@ -98,6 +137,7 @@ html {
     justify-content: center;
     overflow: hidden;
     position: relative;
+    max-width: 300px;
 }
 
 .exercicio button {
@@ -110,5 +150,32 @@ html {
     position: absolute;
     bottom: 20px;
     border-radius: 5px;
+    font-size: 1em;
+    padding: 0.5em 1em;
 }
 
+.item button {
+    margin-left: auto;
+    background: #b16e93;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    }
+
+
+    /* para dispositivos moveis */
+    @media (max-width: 900px) {
+    .principal {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .exercicio, .adicionar, .lista {
+        max-width: 100%;
+        width: 100%;
+    }
+}
