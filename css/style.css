@@ -1,6 +1,8 @@
 html {
 	background: radial-gradient(farthest-corner at right top,#bcb4e2, #f7bed0);
 	height: 100%;
+    min-height: 100vh;
+    margin: 0em;
     padding: 2em;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -8,10 +10,6 @@ html {
     width: 100%;
     text-align: center;
     margin-bottom: 2em;
-}
-
-body {
-    padding: 2em;
 }
 
 .app-titulo h1 {
@@ -26,34 +24,27 @@ body {
 .conteudo {
 	padding: 10vh 1em 0;
 	display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-	gap: 2em;
-}
-.principal {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; 
-    flex-grow: 1;
-	flex-basis: auto;
-	min-width: 300px;
-    max-width: 100vw;
-    width: 100%;
-    margin: 0 auto;
-	padding: 5vh 2em 2em;
-	box-sizing: border-box;
-	background: #703053;
-	border-radius: 10px;
-	gap: 2em;
-    overflow: auto;
-    
+	gap: 20px;
 }
 
-.principal h1 {
+.principal h1  {
     color: #FFFFFF;
     font-size: 2em;
     margin: 0 0 0.5em;
 }
+
+.principal h2, .doisDias h2, .tresDias h2, .quatroDias h2, .cincoDias h2, .seisDias h2, .seteDias h2 {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    margin: 0 0 0.5em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+}
+
 .principal p {
     color: #FFFFFF;
     font-size: 1.2em;
@@ -125,7 +116,7 @@ body {
     background: #b16e93;
     font-weight: 400;
     padding: 0.5em 1em; /* Ajusta o tamanho conforme o conteúdo */
-    min-width: 40px;    /* Opcional: garante tamanho mínimo */
+    min-width: 10px;    /* garante tamanho mínimo */
 }
 .exercicio {
     flex: 0 0 200px;
@@ -164,18 +155,35 @@ body {
     border-radius: 5px;
     transition: background 0.3s ease;
     font-size: 1em;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
     }
 
+.principal, .doisDias, .tresDias, .quatroDias, .cincoDias, .seisDias, .seteDias {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    flex-grow: 1;
+	flex-basis: auto;
+	min-width: 300px;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0 auto;
+	padding: 5vh 2em 2em;
+	box-sizing: border-box;
+	background: #703053;
+	border-radius: 10px;
+	gap: 2em;
+    overflow: auto;
+}
 
     /* para dispositivos moveis */
     @media (max-width: 900px) {
-    .principal {
-        flex-direction: column;
-        align-items: stretch;
+.principal {
+    flex-direction: column;
+    align-items: stretch;
     }
-    .exercicio, .adicionar, .lista {
-        max-width: 100%;
-        width: 100%;
+.exercicio, .adicionar, .lista {
+    max-width: 100%;
+    width: 100%;
     }
 }

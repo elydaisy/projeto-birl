@@ -112,6 +112,42 @@ function deletaElemento(tag, id){
     localStorage.setItem("itens", JSON.stringify(itens))
 }
 
+const selectDias = document.getElementById("dia");
+
+// Lista das classes dos containers
+const containers = [
+    document.querySelector(".principal"),
+    document.querySelector(".doisDias"),
+    document.querySelector(".tresDias"),
+    document.querySelector(".quatroDias"),
+    document.querySelector(".cincoDias"),
+    document.querySelector(".seisDias"),
+    document.querySelector(".seteDias")
+];
+
+// Função para mostrar os containers conforme o valor selecionado
+function atualizarContainers() {
+    const diasSelecionados = parseInt(selectDias.value, 10);
+    containers.forEach((container, index) => {
+        if (index < diasSelecionados) {
+            container.style.display = "flex";
+        } else {
+            container.style.display = "none";
+        }
+    });
+}
+
+atualizarContainers();
+selectDias.addEventListener("change", atualizarContainers);
+
+
+
+
+
+
+
+
+
 
 
 
