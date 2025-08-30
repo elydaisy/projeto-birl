@@ -36,7 +36,6 @@ uploadFoto.addEventListener("change", () => {
     }
 });
 
-
 // criando itens
 itens.forEach( (elemento) => {
     criaElemento(elemento)
