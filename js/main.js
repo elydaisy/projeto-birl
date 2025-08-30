@@ -7,6 +7,7 @@ const uploadFoto = document.getElementById("uploadFoto");
 const fotoUsuario = document.getElementById("fotoUsuario");
 
 
+
 // Carregar imagem do localStorage ao abrir
 const fotoSalva = localStorage.getItem("fotoPerfil");
 if (fotoSalva) {
