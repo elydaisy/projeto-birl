@@ -1,6 +1,7 @@
 const form = document.getElementById("novoItem")
 const lista = document.getElementById("lista")
 const itens = JSON.parse(localStorage.getItem("itens")) || []
+const planos = JSON.parse(localStorage.getItem("planos")) || []
 
 const btnFoto = document.getElementById("btnFoto");
 const uploadFoto = document.getElementById("uploadFoto");
@@ -43,9 +44,13 @@ itens.forEach( (elemento) => {
 
 form.addEventListener("submit", (evento) => {
     evento.preventDefault()
+    //console.log(evento)
 
     const nome = evento.target.elements['nome']
     const quantidade = evento.target.elements['quantidade']
+    const diaDaSemana = evento.target.elements['diaDaSemana'].value
+
+    console.log(diaDaSemana)
 
     const existe = itens.find(elemento => elemento.nome === nome.value) //atualizando lista //o elemento EXISTE??
     
