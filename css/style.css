@@ -1,5 +1,5 @@
 html {
-	background: radial-gradient(farthest-corner at right top,#bcb4e2, #f7bed0);
+	background: radial-gradient(farthest-corner at right top,#0F314A, #0F314A);
 	height: 100%;
     min-height: 100vh;
     margin: 0em;
@@ -16,7 +16,7 @@ html {
 .selecionar {
     margin: 1em 0;
     text-align: center;
-    color: rgb(112, 48, 83);
+    color: #f56b6b;
     font-size: 1em;
     font-family: 'Georgia', serif;
     text-shadow: 1px 1px 5px #f7bed0;
@@ -25,7 +25,7 @@ html {
 
 .app-titulo h1 {
     font-size: 4em;
-    color: rgb(112, 48, 83);
+    color: rgb(255, 255, 255);
     font-family: 'Georgia', serif;
     font-weight: bold;
     letter-spacing: 2px;
@@ -98,7 +98,7 @@ html {
     color: #FFFFFF;
 }
 .cadastrar {
-    background-color: #3d1e3c;
+    background-color: #0F314A;
     color: #FFFFFF;
     cursor: pointer;
     font-size: 1em;
@@ -131,7 +131,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #b16e93;
+    background: #1174B2;
     font-weight: 400;
     padding: 0.5em 1em; /* Ajusta o tamanho conforme o conteúdo */
     min-width: 20px;    /* garante tamanho mínimo */
@@ -165,7 +165,7 @@ html {
 
 .item button {
     margin-left: auto;
-    background: #b16e93;
+    background: #1174B2;
     color: #FFFFFF;
     border: none;
     padding: 0.5em 1em;
@@ -189,14 +189,14 @@ html {
     margin: 0 auto;
 	padding: 5vh 2em 2em;
 	box-sizing: border-box;
-	background: #703053;
+	background: #FF4B4B;
 	border-radius: 10px;
 	gap: 2em;
     overflow: auto;
 }
 .rodape {
     flex-grow: 1;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     padding:  var(--gap);
     text-align: center;
     border-radius: 10px;
@@ -216,6 +216,70 @@ html {
     text-decoration: none;
     font-weight: bold;
 }
+
+
+
+/* Estilo para o seletor de dias */
+
+.selecionar label {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 0.5em;
+    letter-spacing: 1px;
+}
+
+.selecionar select {
+    padding: 0.5em 1.5em;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    background: #fff;
+    color: #703053;
+    font-size: 1.1em;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 2px 8px rgba(112, 48, 83, 0.08);
+    transition: border 0.2s;
+    outline: none;
+    margin-left: 0.5em;
+}
+
+.selecionar select:focus {
+    border: 2px solid #703053;
+    background: #ffffff;
+}
+h3 {color: #FFFFFF; 
+    font-size: 1.5em;
+    margin: 0 0 0.5em;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 5px #f7bed0;
+    letter-spacing: 1px;
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* para dispositivos moveis */
     @media (max-width: 900px) {
