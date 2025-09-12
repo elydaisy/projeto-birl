@@ -88,8 +88,8 @@ html {
     padding: 1em 0.5em;
     border-radius: 10px;
     border: 2px solid #3d1e3c;
-    font-size: 1em;
-}
+    font-size: 1em;}
+
 .adicionar label {
     display: block;
     font-size: 1.2em;
@@ -97,6 +97,7 @@ html {
     margin-bottom: 0.5em;
     color: #FFFFFF;
 }
+
 .cadastrar {
     background-color: #0F314A;
     color: #FFFFFF;
@@ -193,6 +194,8 @@ html {
 	border-radius: 10px;
 	gap: 2em;
     overflow: auto;
+    max-height: 80vh;    /* Limita a altura máxima */
+    overflow-y: auto;    /* Força rolagem vertical se necessário */
 }
 .rodape {
     flex-grow: 1;
@@ -247,7 +250,9 @@ html {
     border: 2px solid #703053;
     background: #ffffff;
 }
-h3 {color: #FFFFFF; 
+
+h3 {
+    color: #FFFFFF; 
     font-size: 1.5em;
     margin: 0 0 0.5em;
     text-align: center;
@@ -257,39 +262,16 @@ h3 {color: #FFFFFF;
 }
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* para dispositivos moveis */
     @media (max-width: 900px) {
-.principal {
+.principal, .doisDias, .tresDias, .quatroDias, .cincoDias, .seisDias, .seteDias, .rodape {
     flex-direction: column;
     align-items: stretch;
     }
 .exercicio, .adicionar, .lista {
+     width: 100%;
     max-width: 100%;
-    width: 100%;
+    box-sizing: border-box;
     }
 }
 
