@@ -1,5 +1,15 @@
 //VERSÃO 3.0
 
+
+const toggleButton = document.getElementById('toggle-theme');
+const body = document.body;
+
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
+
+
+
 const TOTAL_DIAS = 7;
 
 class PlanosDia {
