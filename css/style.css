@@ -1,14 +1,14 @@
 html {
-	background: radial-gradient(farthest-corner at right top,#ffffff, #ffffff);
+	background: radial-gradient(farthest-corner at right top,#ffffff, #ffffff); 
 	height: 100%;
     min-height: 100vh;
     margin: 0em;
-    padding: 2em;
+    padding: 0em;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header {
-    background: #0F314A;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     box-shadow: 2px 2px 2px rgba(112,48,83,0.08);
     margin-bottom: 1em;
     padding-top: 1em;
@@ -22,7 +22,6 @@ header {
 .menu-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 1em;         /* Reduz o padding lateral */
     margin-bottom: 0.5em;   /* Reduz o espaço abaixo */
     box-sizing: border-box;
@@ -47,11 +46,11 @@ header {
     display: flex;
     gap: 1.2em;
     list-style: none;
-    justify-content: center;
     align-items: center;
     padding: 0.5em 0;      /* Reduz padding vertical */
     margin: 0;             /* Remove margens extras */
     box-sizing: border-box;
+    margin-left: auto; /* Adicione esta linha para alinhar à direita */
 }
 
 .menu li a {
@@ -61,12 +60,13 @@ header {
     font-size: 1.1em;
     padding: 0.5em 1em;
     border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.3s, color 0.3s, transform 0.2s; /* Suaviza cor e movimento */
 }
 
 .menu li a:hover {
     background: #f56b6b;
     color: #fff;
+    transform: scale(1.08); /* Leve aumento ao passar o mouse */
 }
 /* Esconde o botão no desktop */
 .menu-toggle {
@@ -77,32 +77,6 @@ header {
     color: #fff;
     cursor: pointer;
     margin-right: 1em;
-}
-
-/* Mobile: mostra o botão e esconde o menu por padrão */
-@media (max-width: 900px) {
-    .menu-toggle {
-        display: block;
-    }
-    .menu {
-        display: none;
-        flex-direction: column;
-        gap: 1em;
-        background: #0F314A;
-        position: absolute;
-        top: 60px;
-        right: 1em;
-        left: 1em;
-        border-radius: 10px;
-        padding: 1em 0;
-        z-index: 100;
-    }
-    .menu.active {
-        display: flex;
-    }
-    .menu-bar {
-        position: relative;
-    }
 }
 
 #toggle-theme {
@@ -120,8 +94,9 @@ header {
     color: #fff;
 }
 
+
 .app-titulo {
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 0 0 0.5em;
     text-align: center;
     font-family: 'Georgia', serif;
@@ -132,7 +107,7 @@ header {
     margin: 1em 0;
     text-align: center;
     color: #f56b6b;
-    font-size: 1em;
+    font-size: 0.5em;
     font-family: 'Georgia', serif;
 
 }
@@ -157,7 +132,7 @@ header {
 }
 h3 {
     color: #1174B2; 
-    font-size: 1em;
+    font-size: 0.5em;
     margin: 0 0 0.5em;
     text-align: center;
     font-family: 'Georgia', serif;
@@ -296,24 +271,26 @@ h3 {
     margin: 0 auto;
 	padding: 5vh 2em 2em;
 	box-sizing: border-box;
-	background: radial-gradient(farthest-corner at right top,#fca671, #FF4B4B);
+	background: linear-gradient(135deg, #ff416c, #ff4b2b);
 	border-radius: 10px;
 	gap: 2em;
-    overflow: auto;
-    max-height: 80vh;    /* Limita a altura máxima */
+    overflow: auto; 
     overflow-y: auto;    /* Força rolagem vertical se necessário */
 }
+
+
+
 .rodape {
     flex-grow: 1;
+    flex-basis: auto;
     background: rgb(255, 255, 255);
-    padding:  var(--gap);
+    padding:  auto 1em;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto;
     max-width: auto;
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: 0.3em;
     color: #0c0b0b;
     line-height: 1.2;
     font-family: 'Georgia', serif;
@@ -388,12 +365,12 @@ button {
 
 /* Tema escuro */
 body.dark-mode {
-  --bg-color: #121212;
+  --bg-color: #2b2a2a;
   --text-color: #ffffff;
 }
     
 
-/* para dispositivos moveis */
+/* para mobile*/
     @media (max-width: 900px) {
 .principal, .doisDias, .tresDias, .quatroDias, .cincoDias, .seisDias, .seteDias, .rodape {
     flex-direction: column;
@@ -407,11 +384,66 @@ body.dark-mode {
 }
 
 
+/* Mobile: mostra o botão e esconde o menu por padrão */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1em;
+        background: #0F314A;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 60vw;           /* Largura de 80% da tela */
+        max-width: 320px;      /* Limite máximo opcional */
+        left: auto;           /* Garante que só o left vale */
+        border-radius: 10px 10px 10px 10px;
+        padding: 1em 0;
+        z-index: 9999;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+    .menu.active {
+        display: flex !important;
+    }
+    .menu-bar {
+        position: relative;
+        z-index: 10000;       /* Garante que o botão fique acima do menu */
+    }
+    .menu-bar {
+        justify-content: flex-end;
+    }
+}
+
+
 /* Menu vertical para mobile */
     @media (max-width: 900px) {
         .menu {
             flex-direction: column;
             gap: 1em;
         }
-    }
+}
 
+    @media (min-width: 901px) {
+        .menu {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .menu-bar:hover .menu,
+        .menu:focus-within {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .menu li a {
+            font-size: 1em; /* Tamanho de fonte menor para desktop */
+            padding: 0.4em 0.8em; /* Padding reduzido */
+        }
+}
+    .logo {
+            margin-right: auto;  /* Mantém o logo à esquerda no desktop */
+        }

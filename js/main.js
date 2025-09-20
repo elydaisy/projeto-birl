@@ -135,13 +135,15 @@ function atualizarContainers() {
     });
 }
 
-// Menu toggle , script para abrir e fechar o menu
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
 
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    }
+    atualizarContainers();
+   
 });
-
-// Inicialização
-atualizarContainers();
