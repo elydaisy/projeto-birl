@@ -7,34 +7,55 @@ html {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+header {
+    background: #0F314A;
+    box-shadow: 2px 2px 2px rgba(112,48,83,0.08);
+    margin-bottom: 1em;
+    padding-top: 1em;
+    box-sizing: border-box;
+    max-width: 100vw;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
 .menu-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2em;
-    margin-bottom: 2em;
+    padding: 0 1em;         /* Reduz o padding lateral */
+    margin-bottom: 0.5em;   /* Reduz o espaço abaixo */
+    box-sizing: border-box;
+    max-width: 100vw;
+    width: 100%;    
+    height: auto;
+    overflow: hidden;
+    position: relative; 
 }
-.logo {
-         
+.logo {       
     margin: 0;
     font-size: 2em;
-    height: 80px;
+    height: 50px;
     color: #FFFFFF;
     text-align: center;
-    text-shadow: 1px 1px 5px #f7bed0;
+    display: flex;
+    align-items: center;
 }
+
+/* Deixe o menu mais fino */
 .menu {
     display: flex;
-    gap: 2em;
+    gap: 1.2em;
     list-style: none;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    margin: 0;
+    padding: 0.5em 0;      /* Reduz padding vertical */
+    margin: 0;             /* Remove margens extras */
+    box-sizing: border-box;
 }
 
 .menu li a {
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
@@ -47,6 +68,17 @@ html {
     background: #f56b6b;
     color: #fff;
 }
+/* Esconde o botão no desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
 
 #toggle-theme {
     background: #f56b6b;
@@ -63,13 +95,20 @@ html {
     color: #fff;
 }
 
+.app-titulo {
+    font-size: 1.5em;
+    margin: 0 0 0.5em;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
 .selecionar {
     margin: 1em 0;
     text-align: center;
     color: #f56b6b;
     font-size: 1em;
     font-family: 'Georgia', serif;
-    text-shadow: 1px 1px 5px #f7bed0;
 
 }
 .conteudo {
@@ -84,12 +123,20 @@ html {
 
 
 .principal h1, h2, .doisDias h2, .tresDias h2, .quatroDias h2, .cincoDias h2, .seisDias h2, .seteDias h2 {
-    color: #FFFFFF;
+    color: #000000;
     font-size: 1.5em;
     margin: 0 0 0.5em;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-align: center;
+}
+h3 {
+    color: #1174B2; 
+    font-size: 1em;
+    margin: 0 0 0.5em;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
 }
 
 .principal p {
@@ -105,7 +152,7 @@ html {
     background: #cca16a;
     width:26px;
     height:26px;
-    border: 3px solid #491033;
+    border: 3px solid #1174B2;
     border-radius: 3px;
     transform: rotate(45deg);
 }
@@ -121,7 +168,7 @@ html {
     margin: 0.5em 0 1em;
     padding: 1em 0.5em;
     border-radius: 10px;
-    border: 2px solid #3d1e3c;
+    border: 2px solid #1174B2;
     font-size: 1em;}
 
 .adicionar label {
@@ -241,7 +288,7 @@ html {
     margin: auto;
     max-width: auto;
     box-sizing: border-box;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #0c0b0b;
     line-height: 1.2;
     font-family: 'Georgia', serif;
@@ -249,7 +296,7 @@ html {
     
 }
 .rodape a {
-    color: #703053;
+    color: #1174B2;
     text-decoration: none;
     font-weight: bold;
 }
@@ -260,7 +307,7 @@ html {
 
 .selecionar label {
     font-size: 1.2em;
-    color: #fff;
+    color: #1174B2;
     font-weight: bold;
     margin-right: 0.5em;
     letter-spacing: 1px;
@@ -271,7 +318,7 @@ html {
     border-radius: 8px;
     border: 2px solid #000000;
     background: #fff;
-    color: #703053;
+    color: #1174B2;
     font-size: 1.1em;
     font-family: 'Georgia', serif;
     box-shadow: 0 2px 8px rgba(112, 48, 83, 0.08);
@@ -281,18 +328,8 @@ html {
 }
 
 .selecionar select:focus {
-    border: 2px solid #703053;
+    border: 2px solid #1174B2;
     background: #ffffff;
-}
-
-h3 {
-    color: #FFFFFF; 
-    font-size: 1.5em;
-    margin: 0 0 0.5em;
-    text-align: center;
-    font-family: 'Georgia', serif;
-    text-shadow: 1px 1px 5px #f7bed0;
-    letter-spacing: 1px;
 }
 
 /* Estilo padrão (modo claro) */
@@ -352,4 +389,29 @@ body.dark-mode {
             gap: 1em;
         }
     }
+
+    @media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1em;
+        background: #0F314A;
+        position: absolute;
+        top: 60px;
+        right: 1em;
+        left: 1em;
+        border-radius: 10px;
+        padding: 1em 0;
+        z-index: 100;
+    }
+    .menu.active {
+        display: flex;
+    }
+    .menu-bar {
+        position: relative;
+    }
+}
 
