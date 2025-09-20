@@ -1,5 +1,5 @@
 html {
-	background: radial-gradient(farthest-corner at right top,#1f1d1d, #000000);
+	background: radial-gradient(farthest-corner at right top,#ffffff, #ffffff);
 	height: 100%;
     min-height: 100vh;
     margin: 0em;
@@ -79,6 +79,31 @@ header {
     margin-right: 1em;
 }
 
+/* Mobile: mostra o botão e esconde o menu por padrão */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1em;
+        background: #0F314A;
+        position: absolute;
+        top: 60px;
+        right: 1em;
+        left: 1em;
+        border-radius: 10px;
+        padding: 1em 0;
+        z-index: 100;
+    }
+    .menu.active {
+        display: flex;
+    }
+    .menu-bar {
+        position: relative;
+    }
+}
 
 #toggle-theme {
     background: #f56b6b;
@@ -389,29 +414,4 @@ body.dark-mode {
             gap: 1em;
         }
     }
-
-    @media (max-width: 900px) {
-    .menu-toggle {
-        display: block;
-    }
-    .menu {
-        display: none;
-        flex-direction: column;
-        gap: 1em;
-        background: #0F314A;
-        position: absolute;
-        top: 60px;
-        right: 1em;
-        left: 1em;
-        border-radius: 10px;
-        padding: 1em 0;
-        z-index: 100;
-    }
-    .menu.active {
-        display: flex;
-    }
-    .menu-bar {
-        position: relative;
-    }
-}
 
