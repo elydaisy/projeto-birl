@@ -419,6 +419,12 @@ body.dark-mode {
 }
 
 
+
+
+
+
+
+
 /* Menu vertical para mobile */
     @media (max-width: 900px) {
         .menu {
@@ -428,11 +434,6 @@ body.dark-mode {
 }
 
     @media (min-width: 901px) {
-        .menu {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
         .menu-bar:hover .menu,
         .menu:focus-within {
             opacity: 1;
